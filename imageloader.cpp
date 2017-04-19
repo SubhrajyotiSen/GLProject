@@ -2,18 +2,10 @@
 #include "imageloader.h"
 #include <GL/glut.h>
 
-Image::Image(char* ps, int w, int h) : pixels(ps), width(w), height(h) {
+Image::Image(char* path) {
 
-}
-
-Image::~Image() {
-
-}
-
-
-Image* loadBMP(const char* filename) {
     int i;
-    FILE* f = fopen(filename, "rb");
+    FILE* f = fopen(path, "rb");
     char info[54];
 
     fread(info, sizeof(char), 54, f);  //read 54-byte header
@@ -34,23 +26,21 @@ Image* loadBMP(const char* filename) {
             data[i+2] = tmp;
     }
 
-    return new Image(data, width, height); //return Image object
+    glGenTextures(1, &textureId); 
+    glBindTexture(GL_TEXTURE_2D, textureId);
+
+    //Map the image to the texture
+    glTexImage2D(GL_TEXTURE_2D,
+        0,
+        GL_RGB,
+        width, height,
+        0,
+        GL_RGB,
+        GL_UNSIGNED_BYTE,
+        data);
 }
 
-GLuint loadTextureFromImage(Image* image) {
-	GLuint textureId;
-	glGenTextures(1, &textureId); 
-	glBindTexture(GL_TEXTURE_2D, textureId);
-
-	//Map the image to the texture
-	glTexImage2D(GL_TEXTURE_2D,
-		0,
-		GL_RGB,
-		image->width, image->height,
-		0,
-		GL_RGB,
-		GL_UNSIGNED_BYTE,
-		image->pixels);
-	return textureId;
+GLuint Image::getTextureID() {
+    
+    return textureId;
 }
-

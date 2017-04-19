@@ -9,29 +9,17 @@
 
 class Image {
 
+private:
+
+	GLuint textureId;
+
 public:
 
-	Image(char* ps, int w, int h);
+	Image(char* path);
 
-	~Image();
-
-	char* pixels;
-
-	int width;
-
-	int height;
+	//Extracts texture from Image.
+	GLuint getTextureID();
 
 };
-
-
-
-//Reads a bitmap image from file.
-
-Image* loadBMP(const char* filename);
-
-//Extracts texture from Image.
-GLuint loadTextureFromImage(Image* image);
-
-
 
 #endif

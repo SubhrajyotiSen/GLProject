@@ -14,9 +14,10 @@ const float size = 10.0f;
 GLUquadricObj *sphere = NULL;
 
 float angle = 0;
-GLuint _textureId;
 
 int counterForEarth = 0;
+
+Image* earth;
 
 void initRendering() {
 	glEnable(GL_DEPTH_TEST);
@@ -25,10 +26,7 @@ void initRendering() {
 
 	glEnable(GL_COLOR_MATERIAL);
 
-	Image* img = loadBMP("Images/earth.bmp");
-	_textureId = loadTextureFromImage(img);
-	delete img;
-
+	earth = new Image("Images/earth.bmp");
 	sphere = gluNewQuadric();
 }
 
@@ -59,9 +57,9 @@ void drawScene() {
 	float yForEarth = sin(counterForEarth*DEG2RAD)*2.3f;
 	glPushMatrix(); 
 	glTranslatef(xForEarth,yForEarth,-16.0f);
-	
+
 	glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, _textureId);
+	glBindTexture(GL_TEXTURE_2D, earth->getTextureID());
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
