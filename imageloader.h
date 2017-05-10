@@ -1,12 +1,6 @@
-#pragma once
-
-#ifndef IMAGE_LOADER_H_INCLUDED
-#define IMAGE_LOADER_H_INCLUDED
-
 #include <GL/gl.h>	
 
 //Represents an image
-
 class Image {
 
 private:
@@ -21,5 +15,3 @@ public:
 	GLuint getTextureID();
 
 };
-
-#endif

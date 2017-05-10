@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include "imageloader.h"
+#include "solarsystem.h"
 #include <cmath>
 
 #include <GL/glut.h>
@@ -10,14 +11,18 @@ using namespace std;
 #define DEG2RAD 3.14/180
 
 const float size = 10.0f;
-#define M_PI	(3.14159265)
 GLUquadricObj *sphere = NULL;
 
 float angle = 0;
 
 int counterForEarth = 0;
 
-Image* earth;
+Image *earth, *sun;
+
+SolarSystem solarSystem;
+
+double pTime;
+double timeSpeed;
 
 void initRendering() {
 	glEnable(GL_DEPTH_TEST);
@@ -27,8 +32,19 @@ void initRendering() {
 	glEnable(GL_COLOR_MATERIAL);
 
 	earth = new Image("Images/earth.bmp");
+	sun = new Image("Images/sun.bmp");
 	sphere = gluNewQuadric();
+
+	
+
+	solarSystem.addPlanet(0, 1, 500, 695500, sun->getTextureID());
+	solarSystem.addPlanet(149600000, 365, 1, 6371, earth->getTextureID()); // earth
+
+	pTime = 2.552f;
+	timeSpeed = 0.1f;
+
 }
+
 
 void handleResize(int w, int h) {
 	glViewport(0, 0, w, h);
@@ -38,36 +54,16 @@ void handleResize(int w, int h) {
 }
 
 void drawScene() {
+
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	// Revolution
-	glBegin(GL_POINTS); 
-	for (int i=0; i < 360; i++) 
-	{ 
-		float degInRad = i*DEG2RAD; 
-		glVertex3f(cos(degInRad)*6.0, sin(degInRad)*2.3,0.0f);
-	} 
-	glEnd(); 
-	if(counterForEarth>359) 
-	counterForEarth = 0;
-	else counterForEarth++;
-	float xForEarth = cos(counterForEarth*DEG2RAD)*6.0f;
-	float yForEarth = sin(counterForEarth*DEG2RAD)*2.3f;
-	glPushMatrix(); 
-	glTranslatef(xForEarth,yForEarth,-16.0f);
+	pTime += timeSpeed;
 
-	glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, earth->getTextureID());
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
-	// Rotation
-	glRotatef(90,1.0f,0.0f,0.0f);
-	glRotatef(angle,0.0f,0.0f,1.0f);
-	gluQuadricTexture(sphere,1);
-	gluSphere(sphere,4,20,20);
+	solarSystem.calculatePositions(pTime);
+	
+	solarSystem.render();
 
 	// Swap buffers since double buffers are used
 	glutSwapBuffers();
@@ -86,7 +82,7 @@ void update(int value) {
 int main(int argc, char** argv) {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-	glutInitWindowSize(400, 400);
+	glutInitWindowSize(1280, 1080);
 
 	glutCreateWindow("Solar System");
 	initRendering();
