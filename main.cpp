@@ -17,8 +17,6 @@ float angle = 0;
 
 int counterForEarth = 0;
 
-Image *earth, *sun;
-
 SolarSystem solarSystem;
 
 double pTime;
@@ -31,14 +29,18 @@ void initRendering() {
 
 	glEnable(GL_COLOR_MATERIAL);
 
-	earth = new Image("Images/earth.bmp");
-	sun = new Image("Images/sun.bmp");
-	sphere = gluNewQuadric();
-
+	Image* earth = new Image("Images/earth.bmp");
+	Image* sun = new Image("Images/sun.bmp");
+	Image* mercury = new Image("Images/mercury.bmp");
+	Image* venus = new Image("Images/venus.bmp");
+	Image* mars = new Image("Images/mars.bmp");
 	
 
-	solarSystem.addPlanet(0, 1, 500, 695500, sun->getTextureID());
-	solarSystem.addPlanet(149600000, 365, 1, 6371, earth->getTextureID()); // earth
+	solarSystem.addPlanet(0, 1, 500, 695500, sun->getTextureID()); // sun
+	solarSystem.addPlanet(57910000, 88, 58.6, 2440, mercury->getTextureID()); // mercury
+	solarSystem.addPlanet(108200000, 224.65, 243, 6052, venus->getTextureID()); // venus
+	solarSystem.addPlanet(179600000, 365, 1, 6371, earth->getTextureID()); // earth
+	solarSystem.addPlanet(227939100, 686, 1.03f, 3389, mars->getTextureID()); // mars
 
 	pTime = 2.552f;
 	timeSpeed = 0.1f;
