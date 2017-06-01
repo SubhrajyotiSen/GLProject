@@ -1,0 +1,7 @@
+Mercury (0.4 AU from the Sun) is the closest planet to the Sun and the smallest planet in the Solar System (0.055 Earth masses). Mercury has no natural satellites, and its only known geological features besides impact craters are lobed ridges or rupes, probably produced by a period of contraction early in its history. 
+Radius: 2,440 km
+Distance from Sun: 57.91 million km
+Mass: 3.285 × 10^23 kg (0.055 M⊕)
+Length of day: 58d 15h 30m
+Orbital period: 88 days
+Equatorial rotation velocity: 10.892 km/h (3.026 m/s)

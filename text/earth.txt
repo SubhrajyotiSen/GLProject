@@ -1,0 +1,7 @@
+Earth (1 AU from the Sun) is the largest and densest of the inner planets, the only one known to have current geological activity, and is the only place in the Solar System where life is known to exist. Its liquid hydrosphere is unique among the terrestrial planets, and it is also the only planet where plate tectonics has been observed.
+Radius: 6,371 km
+Axial tilt: 23.4392811°
+Volume: 1.08321×1012 km3 (2.59876×1011 cu mi)
+Polar radius: 6356.8 km (3949.9 mi)
+Equatorial rotation velocity: 0.4651 km/s; (1674.4 km/h; 1040.4 mph)
+Mean anomaly: 358.617°

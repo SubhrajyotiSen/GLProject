@@ -1,0 +1,8 @@
+Saturn (9.5 AU), distinguished by its extensive ring system, has several similarities to Jupiter, such as its atmospheric composition and magnetosphere. Although Saturn has 60% of Jupiter's volume, it is less than a third as massive, at 95 Earth masses, making it the least dense planet in the Solar System. The rings of Saturn are made up of small ice and rock particles. 
+Saturn has 62 confirmed satellites; two of which are Titan and Enceladus.
+Radius: 58,232 km
+Orbital period: 29 years
+Distance from Sun: 1.429 billion km
+Mass: 5.683 × 10^26 kg (95.16 M⊕)
+Equatorial rotation velocity: 9.87 km/s (6.13 mi/s; 35,500 km/h)
+Moons: Titan, Enceladus, Mimas, Iapetus, Dione, Tethys, Rhea, Kari.

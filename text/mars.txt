@@ -1,0 +1,6 @@
+Mars (1.5 AU from the Sun) is smaller than Earth and Venus (0.107 Earth masses). It possesses an atmosphere of mostly carbon dioxide with a surface pressure of 6.1 millibars (roughly 0.6 percent that of the Earth's). Its surface, peppered with vast volcanoes such as Olympus Mons and rift valleys such as Valles Marineris, shows geological activity that may have persisted until as recently as 2 million years ago. 
+Radius: 3,390 km
+Gravity: 3.711 m/s²
+Surface pressure: 0.636 (0.4–0.87) kPa; 0.00628 atm
+Equatorial rotation velocity: 868.22 km/h (241.17 m/s)
+Polar radius: 3,376.2±0.1 km; 0.531 Earths

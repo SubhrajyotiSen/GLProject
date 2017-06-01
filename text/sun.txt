@@ -1,0 +1,7 @@
+The Sun is the Solar System's star, and by far its chief component. Its large mass (332,900 Earth masses) produces temperatures and densities in its core great enough to sustain nuclear fusion, which releases enormous amounts of energy.
+Distance to Earth: 149.6 million km
+Escape velocity (from the surface): 617.7 km/s; 55 × Earth
+Equatorial surface gravity: 274.0 m/s2; 27.94 g; 27,542.29 cgs; 28 × Earth
+Mean radiance (Isol): 2.009×107 W·m−2·sr−1
+Age: ≈ 4.6 billion years
+Luminosity (Lsol): 3.828×1026 W; ≈ 3.75×1028 lm; ≈ 98 lm/W efficacy

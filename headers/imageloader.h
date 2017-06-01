@@ -4,14 +4,14 @@
 class Image {
 
 private:
-
+	// holds the id of the image texture
 	GLuint textureId;
 
 public:
-
+	//constructor
 	Image(char* path);
 
-	//Extracts texture from Image.
+	// returns the id of the generated texture
 	GLuint getTextureID();
 
 };
