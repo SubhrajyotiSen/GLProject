@@ -344,6 +344,7 @@ void keyDown(unsigned char key, int x, int y) {
 		controls.turnRight = true;
 		break;
 	case 27:
+        system("pkill aplay");
 		exit(0);
 		break;
 	case 'b':
