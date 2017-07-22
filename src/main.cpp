@@ -90,15 +90,15 @@ void init(void) {
 	glEnable(GL_LIGHT0);
 	glDisable(GL_LIGHTING);
 
-	sunInfo = new Image("../images/Sun.bmp");
-	mercuryInfo = new Image("../images/Mercury.bmp");
-	venusInfo = new Image("../images/Venus.bmp");
-	earthInfo = new Image("../images/Earth.bmp");
-	marsInfo = new Image("../images/Mars.bmp");
-	jupiterInfo = new Image("../images/Jupiter.bmp");
-	saturnInfo = new Image("../images/Saturn.bmp");
-	uranusInfo = new Image("../images/Uranus.bmp");
-	neptuneInfo = new Image("../images/Neptune.bmp");
+	sunInfo = new Image("../images/sun-info.bmp");
+	mercuryInfo = new Image("../images/mercury-info.bmp");
+	venusInfo = new Image("../images/venus-info.bmp");
+	earthInfo = new Image("../images/earth-info.bmp");
+	marsInfo = new Image("../images/mars-info.bmp");
+	jupiterInfo = new Image("../images/jupiter-info.bmp");
+	saturnInfo = new Image("../images/saturn-info.bmp");
+	uranusInfo = new Image("../images/uranus-info.bmp");
+	neptuneInfo = new Image("../images/neptune-info.bmp");
 
 	stars = new Image("../images/stars.bmp");
 	moon = new Image("../images/moon.bmp");
