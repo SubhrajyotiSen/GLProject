@@ -288,7 +288,7 @@ void display() {
 
 void keyDown(unsigned char key, int x, int y) {
 	
-	if (key > '0' && key <= '8')
+	if (key >= '0' && key <= '8')
 	{
 		float vec[3];
 		solarSystem.getPlanetLocation(key - '0', vec);
