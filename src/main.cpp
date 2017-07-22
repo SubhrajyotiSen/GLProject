@@ -249,7 +249,7 @@ void display() {
 
 	glEnable(GL_DEPTH_TEST);
 
-	solarSystem.render();
+	solarSystem.render(solarSystem.getPlanetRadiusScaled(0));
 
 	glDisable(GL_DEPTH_TEST);
 

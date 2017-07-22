@@ -15,6 +15,7 @@ class Planet
 		float rotationTime;
 
 		float radius;
+		float radiusScaled;
 
 		GLuint textureHandle;
 
@@ -54,5 +55,11 @@ class Planet
 
 		// set texture of given planet at runtime
 		void setTexture(GLuint textureHandle);
+
+		// get distance of a particular planet from the sun
+		float getScaledDistanceFromSun(void);
+
+		// get the radius after scaling to the current system
+		float getRadiusScaled(void);
 };
 

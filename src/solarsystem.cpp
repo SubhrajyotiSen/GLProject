@@ -21,15 +21,21 @@ void SolarSystem::addMoon(int planetIndex, float distanceFromPlanet, float orbit
 }
 
 // render the planets and their orbits
-void SolarSystem::render() {
+void SolarSystem::render(float sunRadius) {
 	glEnable(GL_DEPTH_TEST);
-	
-	for (int i = 0; i < planets.size(); i++)
+
+	glEnable(GL_LIGHTING);
+	planets[0].render();
+	glDisable(GL_LIGHTING);
+
+	for (int i = 1; i < planets.size(); i++)
 	{
-		glEnable(GL_LIGHTING);
-		planets[i].render();
-		glDisable(GL_LIGHTING);
-		planets[i].renderOrbit();
+		if (planets[i].getScaledDistanceFromSun() > sunRadius) {
+			glEnable(GL_LIGHTING);
+			planets[i].render();
+			glDisable(GL_LIGHTING);
+			planets[i].renderOrbit();
+		}
 	}
 
 	glDisable(GL_DEPTH_TEST);
@@ -51,4 +57,9 @@ float SolarSystem::getPlanetRadius(int index) {
 void SolarSystem::startBlackHole(GLuint textureHandle) {
 	planets[0].setTexture(textureHandle);
 	planets[0].increaseRadius();
+}
+
+// return the radius of the planet scaled according to the current system
+float SolarSystem::getPlanetRadiusScaled(int index) {
+	return planets[0].getRadiusScaled();
 }

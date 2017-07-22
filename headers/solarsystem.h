@@ -25,7 +25,7 @@ class SolarSystem
 		void addMoon(int planetIndex, float distanceFromPlanet, float orbitTime, float rotationTime, float radius, GLuint textureHandle);
 
 		// render the planets and their orbits
-		void render();
+		void render(float sunRadius);
 
 		// get the current location of planet at given index
 		void getPlanetLocation(int index, float* vec);
@@ -35,5 +35,8 @@ class SolarSystem
 
 		// initiates the creation of a black hole
 		void startBlackHole(GLuint textureHandle);
+
+		// get the scaled radius of a particular planet
+		float getPlanetRadiusScaled(int index);
 };
 

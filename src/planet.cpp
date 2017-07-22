@@ -47,7 +47,7 @@ void Planet::render(void) {
 	gluQuadricNormals(quadric, GLU_SMOOTH);
 
 	if (distanceFromSun < 0.001f) 	{
-		float radiusScaled = radius * radiusScale;
+		radiusScaled = radius * radiusScale;
 		if (radiusScaled > 0.5f) 
 			radiusScaled = 0.5f;
 		radiusScaled = radiusScaled + n*i;
@@ -107,4 +107,14 @@ void Planet::increaseRadius() {
 // set texture of given planet at runtime
 void Planet::setTexture(GLuint textureHandle)  {
 	 this->textureHandle = textureHandle;
+}
+
+// get distance of a particular planet from the sun
+float Planet::getScaledDistanceFromSun(void) {
+	return distanceFromSun * orbitScale;
+}
+
+// get the radius after scaling to the current system
+float Planet::getRadiusScaled(void) {
+	return radiusScaled;
 }
